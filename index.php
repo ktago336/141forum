@@ -1,5 +1,6 @@
 
 <head>
+    <title>FORUM</title>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -9,13 +10,13 @@
 
 
 <h1 align="center">
-</p>
+
 <p style="font-family:'Snell Roundhand', cursive"><font color="yellow" size=250>
 <form action="answer.php" method="post">
-<p> КАК ВАС ЗОВУТ?test123log rabotaet<input type="text" name="name"/></p>
+<p> КАК ВАС ЗОВУТ?successful<input type="text" name="name"/></p>
 <p><input type="submit"/></p>
 </form>
-</font></p>
+
 
 </body>
-</html>
+
