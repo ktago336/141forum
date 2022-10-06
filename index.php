@@ -71,6 +71,14 @@ else echo"
 <hr size="10" color='#2F3E44'></font></p>
 <?php require 'forum.php'?>
 <br><br><br><h6><?php echo "Time:"; echo(date("Y/m/d  H:i:s"));?></h6>
+<script>
+
+
+var time = setInterval(function() {
+  var date = new Date();
+  document.getElementById("time").innerHTML = (date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+}, 1000);
+</script>
 </body>
 </html>
 
