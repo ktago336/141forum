@@ -8,7 +8,9 @@ echo "<h3 align='center'>РЕГИСТРАЦИЯ</h3>";
 	Login:
 	<input type="text" name="Username"><br>
     Password:
-    <input type="password" name="Password" size="24">
+    <input type="password" name="Password" size="24"><br>
+    Confirm password:
+    <input type="password" name="Password2" size="24">
 	<br><br>
 	<input type="submit" value="Регистрация">
 

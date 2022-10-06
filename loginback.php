@@ -1,9 +1,9 @@
 <?php
 $username=$_POST['Username'];
 $pass=md5($_POST['Password']);
-$pass=file_get_contents('pass.cfg');
+$passdb=file_get_contents('pass.cfg');
 
-$link = mysqli_connect("localhost", "Admin", $pass,"forum");
+$link = mysqli_connect("localhost", "Admin", $passdb,"forum");
 $sqlCheck = "SELECT * FROM users";
 
 if ($result= $link->query($sqlCheck)){
@@ -32,12 +32,12 @@ $sql = "SELECT Login, Password FROM users WHERE Login='$username'";
 				#echo $_COOKIE["prev_addr"];
 				#="Location:".$_COOKIE["prev_addr"];
 				#echo $url;
-				header("Location: index111.php");
+				header("Location: index.php");
  				exit;
 
 			}
 
-			else echo "Неверный пароль <br><a href='index111.php'>НА ГЛАВНУЮ</a><br";
+			else echo "Неверный пароль <br><a href='index.php'>НА ГЛАВНУЮ</a><br".$pass;
  		
  		}
  	}

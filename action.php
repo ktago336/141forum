@@ -5,10 +5,8 @@ $pass=file_get_contents('pass.cfg');
 
 $link = mysqli_connect("localhost", "Admin", $pass,"forum");
 $date=date('Y/m/d  H:i:s');
-if(($_COOKIE['Login'])) $name1=$_COOKIE['Login'];
-if($_POST['Username']) $name1=$_POST['Username']."(Не залогинен)";
+$name1=$_COOKIE['Login'];
 $msg2=trim($_POST["Msg"]);
-//non logged user nick acessability check
 $sql=$link->prepare("SELECT Login FROM users WHERE Login=?");
 $sql->bind_param("s", $ip);
 $sql->execute();
@@ -29,9 +27,9 @@ else if($result&&!$isLogged){
 
 else
 {
-$sql = "INSERT INTO students VALUES ('$name1', '$date', '$msg2')";
-$result = mysqli_query($link, $sql);
-if ($result == false) {
+$sql ="INSERT INTO Forum(Name, Time, Msg) VALUES ('$name1', '$date', '$msg2')";
+$link->query($sql);
+if ($link == false) {
          echo"Произошла ошибка при выполнении запроса";
         }
 

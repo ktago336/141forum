@@ -5,18 +5,11 @@ $link = mysqli_connect("localhost", "Admin", $pass,"forum");
 
 if ($link==false)
 echo "connection db error";
-else
-{
-    $sql="INSERT INTO users(Login, Password, Ip) VALUES (Admin, Admin, '192.168.0.1')";
-    $qwe=mysqli_query($link,$sql);
-    echo "tried to reach db...";
-    
-}
-
 $username=($_POST["Username"]);
 $password=($_POST["Password"]);
 $ip=$_SERVER['REMOTE_ADDR'];
 $passwordhash=md5($password);
+$passwordhash2=md5($_POST["Password2"]);
 $a=strlen($password);
 //IP ANTISPAM CHECK
 $sql=$link->prepare("SELECT Login FROM users WHERE Ip=?");
@@ -61,6 +54,11 @@ else if(!trim($password)){
 else if (strlen(trim($password))<6){
         echo "too short password ";
         echo "<br><a href='index.php'>НА ГЛАВНУЮ</a><br><a href='register.php'>ЕЩЕ РАЗ</a>";
+}
+else if ($passwordhash2!=$passwordhash)
+{
+    echo "passwords do not match";
+    echo "<br><a href='index.php'>НА ГЛАВНУЮ</a><br><a href='register.php'>ЕЩЕ РАЗ</a>";
 }
 else
 //INSERTING NEW USER
