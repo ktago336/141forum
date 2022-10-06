@@ -12,7 +12,7 @@
 </p>
 <p style="font-family:'Snell Roundhand', cursive"><font color="yellow" size=250>
 <form action="answer.php" method="post">
-<p> КАК ВАС ЗОВУТ?test<input type="text" name="name"/></p>
+<p> КАК ВАС ЗОВУТ?test123<input type="text" name="name"/></p>
 <p><input type="submit"/></p>
 </form>
 </font></p>
