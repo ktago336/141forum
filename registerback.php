@@ -2,6 +2,17 @@
 $pass=file_get_contents('pass.cfg');
 
 $link = mysqli_connect("localhost", "Admin", $pass,"forum");
+
+if ($link==false)
+echo "connection db error";
+else
+{
+    $sql="INSERT INTO users(Login, Password, Ip) VALUES (Admin, Admin, '192.168.0.1')";
+    $qwe=mysqli_query($link,$sql);
+    echo "tried to reach db...";
+    
+}
+
 $username=($_POST["Username"]);
 $password=($_POST["Password"]);
 $ip=$_SERVER['REMOTE_ADDR'];
