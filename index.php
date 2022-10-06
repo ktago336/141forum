@@ -78,6 +78,7 @@ var time = setInterval(function() {
   var date = new Date();
   document.getElementById("time").innerHTML = (date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
 }, 1000);
+<div id="time"></div>
 </script>
 </body>
 </html>
