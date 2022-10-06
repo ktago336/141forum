@@ -1,5 +1,7 @@
 <?php
-$link = mysqli_connect("localhost", "root", "root","university");
+$pass=file_get_contents('pass.cfg');
+
+$link = mysqli_connect("localhost", "Admin", $pass,"forum");
 $username=($_POST["Username"]);
 $password=($_POST["Password"]);
 $ip=$_SERVER['REMOTE_ADDR'];

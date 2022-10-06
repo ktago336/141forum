@@ -1,8 +1,9 @@
 <?php
 $username=$_POST['Username'];
 $pass=md5($_POST['Password']);
+$pass=file_get_contents('pass.cfg');
 
-$link = mysqli_connect("localhost", "root", "root","university");
+$link = mysqli_connect("localhost", "Admin", $pass,"forum");
 $sqlCheck = "SELECT * FROM users";
 
 if ($result= $link->query($sqlCheck)){

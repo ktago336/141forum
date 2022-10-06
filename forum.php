@@ -1,7 +1,9 @@
         <?php
-        $link = mysqli_connect("localhost", "root", "root","university");
+        $pass=file_get_contents('pass.cfg');
 
-        $sql = "SELECT * FROM students ORDER BY Time DESC";
+        $link = mysqli_connect("localhost", "Admin", $pass,"forum");
+
+        $sql = "SELECT * FROM Forum ORDER BY Time DESC";
 
         if ($result= $link->query($sql)){
 	foreach ($result as $row) {

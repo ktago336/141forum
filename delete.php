@@ -15,7 +15,9 @@
     <?php
     $ip=$_SERVER['REMOTE_ADDR'];
     echo $ip."<br>";
-    $link = mysqli_connect("localhost", "root", "root","university");
+    $pass=file_get_contents('pass.cfg');
+
+    $link = mysqli_connect("localhost", "Admin", $pass,"forum");
 
     $sql=$link->prepare("SELECT Login FROM users WHERE Ip=(?)");
     $sql->bind_param('s',$ip);

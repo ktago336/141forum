@@ -1,9 +1,9 @@
 <?php
 require "coockiecheck.php";
-?>
 
-<?php
-$link = mysqli_connect("localhost", "root", "root","university");
+$pass=file_get_contents('pass.cfg');
+
+$link = mysqli_connect("localhost", "Admin", $pass,"forum");
 $date=date('Y/m/d  H:i:s');
 if(($_COOKIE['Login'])) $name1=$_COOKIE['Login'];
 if($_POST['Username']) $name1=$_POST['Username']."(Не залогинен)";
